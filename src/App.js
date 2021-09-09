@@ -5,6 +5,7 @@ import { ReactComponent as GithubIcon } from "./assets/images/github-icon.svg";
 import { ThemeProvider } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import { RouterConfig } from 'navigation/RouterConfig';
+import { light } from 'styles/muiTheme';
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
@@ -12,7 +13,7 @@ const geoUrl =
 function App() {
   return (
     <div>
-      <ThemeProvider>
+      <ThemeProvider theme={light()}>
         <BrowserRouter>
           <RouterConfig />
         </BrowserRouter>

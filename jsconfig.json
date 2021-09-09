@@ -1,6 +1,6 @@
 {
   "typeAcquisition": {
-    "exclude": [ "dotenv" ]
+    "exclude": [ "dotenv", "harmony-reflect" ]
   },
   "compilerOptions": {
     "baseUrl": "src"
