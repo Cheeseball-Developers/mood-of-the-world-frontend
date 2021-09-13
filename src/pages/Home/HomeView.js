@@ -6,6 +6,9 @@ import { ROOT, ABOUT } from 'navigation/CONSTANTS';
 import { Typography, Button } from '@material-ui/core';
 import WorldMap from './components/WorldMap';
 import { useState } from 'react';
+import ActionsContainer from 'components/ActionsContainer';
+import InfoRounded from '@material-ui/icons/InfoRounded';
+import Brightness2Rounded from '@material-ui/icons/Brightness2Rounded';
 
 function HomeView(props) {
     const [content, setContent] = useState("");
@@ -13,12 +16,27 @@ function HomeView(props) {
     const goTo = (path) => {
         history.push(path || ROOT);
     }
+
+    const buttons = [
+        {
+            icon: <Brightness2Rounded />,
+            action: () => {},
+            selected: false,
+            disabled: true,
+        },
+        {
+            icon: <InfoRounded />,
+            action: () => goTo(ABOUT),
+            selected: false,
+            disabled: false,
+        },
+    ];
+
     return (
         <>
-            <div>
-                <Typography variant='h2'>{props.title}</Typography>
-                <Button variant="contained" color="primary" onClick={() => goTo(ABOUT)}>&#8505;</Button>
-            </div>
+            {/* <Typography variant='h2'>{props.title}</Typography> */}
+            <ActionsContainer buttons={buttons}/>
+                {/* <Button variant="contained" color="primary" onClick={() => goTo(ABOUT)}>&#8505;</Button> */}
             <div>
                 <WorldMap setTooltipContent={setContent} />
                 <ReactTooltip>{content}</ReactTooltip>

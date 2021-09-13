@@ -1,0 +1,7 @@
+.top-right {
+    position: absolute;
+    display: flex;
+    top: 1%;
+    right: 1%;
+    flex-direction: row;
+}

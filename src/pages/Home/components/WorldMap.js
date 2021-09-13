@@ -1,5 +1,8 @@
-import React, { memo } from 'react';
-import { ZoomableGroup, ComposableMap, Geographies, Geography } from "react-simple-maps";
+import React, { memo, useState, useEffect } from 'react';
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import SentimentService from 'services/SentimentService';
+
+const sentimentService = SentimentService.getInstance();
 
 const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
@@ -14,44 +17,55 @@ const rounded = num => {
     }
 };
 
-const WorldMap = ({setTooltipContent}) => {
+const WorldMap = ({ setTooltipContent }) => {
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight);
+
+    const updateWidthAndHeight = () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", updateWidthAndHeight);
+        return () => window.removeEventListener("resize", updateWidthAndHeight);
+    });
+
     return (
         <div>
-            <ComposableMap>
-                <ZoomableGroup>
-                    <Geographies geography={geoUrl}>
-                        {({ geographies }) =>
-                            geographies.map(geo => (
-                                <Geography
-                                    key={geo.rsmKey}
-                                    geography={geo}
-                                    onMouseEnter={() => {
-                                        const { NAME, POP_EST } = geo.properties;
-                                        console.log(`${NAME} — ${rounded(POP_EST)}`);
-                                        setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
-                                    }}
-                                    onMouseLeave={() => {
-                                        setTooltipContent("");
-                                    }}
-                                    style={{
-                                        default: {
-                                            fill: "#D6D6DA",
-                                            outline: "none"
-                                        },
-                                        hover: {
-                                            fill: "#F53",
-                                            outline: "none"
-                                        },
-                                        pressed: {
-                                            fill: "#E42",
-                                            outline: "none"
-                                        }
-                                    }}
-                                />
-                            ))
-                        }
-                    </Geographies>
-                </ZoomableGroup>
+            <ComposableMap height={height} width={width}>
+                <Geographies geography={geoUrl}>
+                    {({ geographies }) =>
+                        geographies.map(geo => (
+                            <Geography
+                                key={geo.rsmKey}
+                                geography={geo}
+                                onMouseEnter={() => {
+                                    const { NAME, POP_EST } = geo.properties;
+                                    console.log(`${JSON.stringify(geo.properties)}`);
+                                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                                }}
+                                onMouseLeave={() => {
+                                    setTooltipContent("");
+                                }}
+                                style={{
+                                    default: {
+                                        fill: sentimentService.getCountryColor(geo.properties['ISO_A2']),
+                                        outline: "none"
+                                    },
+                                    hover: {
+                                        fill: "#F53",
+                                        outline: "none"
+                                    },
+                                    pressed: {
+                                        fill: "#E42",
+                                        outline: "none"
+                                    }
+                                }}
+                            />
+                        ))
+                    }
+                </Geographies>
             </ComposableMap>
         </div>
     );

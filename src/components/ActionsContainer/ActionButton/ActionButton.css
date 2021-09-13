@@ -1,0 +1,12 @@
+.button {
+    color: #000;
+}
+
+.selected {
+    color: aqua;
+    background-color: blue;
+}
+
+.disabled {
+    color:azure;
+}
