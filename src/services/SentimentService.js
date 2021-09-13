@@ -7,6 +7,7 @@ const COLORS = {
 
 export default class SentimentService {
     static myInstance = null;
+    es = new EventSource('');
 
     allSentiments = {
         'IN': {
@@ -28,6 +29,14 @@ export default class SentimentService {
             'Angry': 0.05
         }
     };
+
+    getEventSource() {
+        return this.es;
+    }
+
+    closeEventSource() {
+        this.es.close();
+    }
 
     getCountrySentiments(countryCode) {
         return {

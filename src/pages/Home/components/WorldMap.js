@@ -28,7 +28,11 @@ const WorldMap = ({ setTooltipContent }) => {
 
     useEffect(() => {
         window.addEventListener("resize", updateWidthAndHeight);
-        return () => window.removeEventListener("resize", updateWidthAndHeight);
+        sentimentService.getEventSource().onmessage = (data) => { }; // TODO: Add function call
+        return () => {
+            window.removeEventListener("resize", updateWidthAndHeight);
+            sentimentService.closeEventSource();
+        };
     });
 
     return (
