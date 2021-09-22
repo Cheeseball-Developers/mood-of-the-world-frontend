@@ -1,1 +1,1 @@
-export { HighlightSection as default } from './HighlightSection';
+export { HighlightSection } from './HighlightSection';

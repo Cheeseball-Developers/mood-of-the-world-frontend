@@ -6,7 +6,7 @@ import { CloseIcon } from './components/CloseIcon';
 
 export function AboutContainer() {
     return (
-        <div>
+        <div style={{padding: '20px'}}>
             <Link to={ROOT}>
                 <CloseIcon />
             </Link>

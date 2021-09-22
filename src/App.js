@@ -1,44 +1,31 @@
 import './App.css';
 import 'fontsource-roboto';
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { ReactComponent as GithubIcon } from "./assets/images/github-icon.svg";
+import { useState } from 'react';
+import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import { RouterConfig } from 'navigation/RouterConfig';
-import { light } from 'styles/muiTheme';
-
-const geoUrl =
-  "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
+import { light, dark } from 'styles/muiTheme';
 
 function App() {
+  const [darkState, setDarkState] = useState(false);
+
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+    console.log("theme=", darkState ? "dark" : "light");
+  };
+
+
   return (
-    <div>
-      <ThemeProvider theme={light()}>
+    <div style={{overflow: 'hidden', scrollbarWidth: 'none'}}>
+      <ThemeProvider theme={darkState ? dark() : light()}>
+        <CssBaseline />
         <BrowserRouter>
-          <RouterConfig />
+          <RouterConfig handleThemeChange={handleThemeChange} />
         </BrowserRouter>
       </ThemeProvider>
     </div>
   );
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div>
-//           <ComposableMap>
-//             <Geographies geography={geoUrl}>
-//               {({ geographies }) =>
-//                 geographies.map((geo) => (
-//                   <Geography key={geo.rsmKey} geography={geo} />
-//                 ))
-//               }
-//             </Geographies>
-//           </ComposableMap>
-//       </div>
-//       <GithubIcon />
-//     </div>
-//   );
-// }
 
 export default App;

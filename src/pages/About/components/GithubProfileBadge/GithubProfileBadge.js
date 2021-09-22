@@ -6,7 +6,7 @@ import { Avatar } from '@material-ui/core';
 export const GithubProfileBadge = (props) => {
     return (
         <div align='center'>
-        <Avatar style={{width:'10%', height: '10%'}} src={`https://avatars.githubusercontent.com/${props.username}`} />
+        <Avatar src={`https://avatars.githubusercontent.com/${props.username}`} />
         {props.username}
         </div>
     );

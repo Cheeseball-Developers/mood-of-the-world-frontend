@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { GithubProfileBadge } from './components/GithubProfileBadge';
-import HighlightSection from 'components/HighlightSection';
+import {HighlightSection} from 'components';
 
 export const AboutView = (props) => {
     return (
@@ -10,12 +10,12 @@ export const AboutView = (props) => {
             Mood of the World takes a sampled stream from Twitter and uses its NLP engine to analyse the
             sentiments.
             <HighlightSection title='Contributors' child={
-                <>
-                    <GithubProfileBadge username='abhishekUpmanyu' />
-                    <GithubProfileBadge username='OmiWakode' />
-                </>}
-            />
-        </div>
+                <div style={{ 'display': 'flex', 'flex-direction': 'row'}}>
+            <GithubProfileBadge username='abhishekUpmanyu' />
+            <GithubProfileBadge username='OmiWakode' />
+        </div>}
+/>
+        </div >
     );
 }
 

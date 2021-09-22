@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { colors, createMuiTheme } from "@material-ui/core";
 // import { purple, green, orange, deepOrange } from "@material-ui/core/colors";
 
 // Global styles can be moved to a separate file for ease of maintenance.
@@ -18,11 +18,16 @@ export const dark = () => (createMuiTheme({
         secondary: {
             main: "#757575",
         },
+        background: {
+            default: "#111111",
+        }
     },
     typography: {
-        button: {
-            // textTransform: "none",   //Using this will stop tranforming all button texts to UPPERCASE
-        },
+        useNextVariants: true,
+        h1: {
+            fontSize: '72px',
+            color: '#555555'
+        }
     }//,
     //common styles.
     //   global
@@ -37,6 +42,9 @@ export const light = () => (createMuiTheme({
         secondary: {
             main: "#040f3d",
         },
+        background: {
+            default: '#FFFDD0'
+        }
     },
     typography: {
         useNextVariants: true,

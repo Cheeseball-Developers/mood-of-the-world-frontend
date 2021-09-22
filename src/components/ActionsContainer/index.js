@@ -1,1 +1,1 @@
-export { ActionsContainer as default } from './ActionsContainer';
+export { ActionsContainer } from './ActionsContainer';
