@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { ActionsContainer } from 'components';
 import InfoRounded from '@material-ui/icons/InfoRounded';
 import Brightness2Rounded from '@material-ui/icons/Brightness2Rounded';
+import SentimentsTooltip from './components/SentimentsTooltip';
 
 const sentimentService = new SentimentService();
 
@@ -63,15 +64,10 @@ function HomeView({ handleThemeChange }) {
                 return (
                     <div>
                         <span>{countryName}</span>
-                        {sentiments.length === 0 ? <div>HI</div> : (country in sentiments) ? <ul>
-                            {
-                                Object.keys(sentiments[country]).map(function (sentiment, i) {
-                                    return (
-                                        <li>{sentiment.charAt(0).toUpperCase() + sentiment.slice(1) + ': ' + sentiments[country][sentiment]}</li>
-                                    )
-                                })
-                            }
-                        </ul> : <div>NOT FOUND</div>}
+                        {sentiments.length === 0 ?
+                            <div>LOADING</div> :
+                            (country in sentiments) ? <SentimentsTooltip sentiments={sentiments[country]} /> :
+                                <div>Data Unavailable</div>}
                     </div>
                 )
             }} />

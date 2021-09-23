@@ -1,6 +1,6 @@
 const COLORS = {
     '': '#999999',
-    'angry': '#FF3333',
+    'anger': '#FF3333',
     'anticipation': '#F45826',
     'disgust': '#601881',
     'fear': '#224A60',
@@ -13,7 +13,7 @@ const COLORS = {
     'trust': '#7F0037',
 };
 
-export default function getCountryColor(sentiments) {
+export function getCountryColor(sentiments) {
     let max = 0;
     let maxSentiment = '';
     for (var sentiment in sentiments) {
@@ -25,4 +25,11 @@ export default function getCountryColor(sentiments) {
     console.log(sentiments);
     console.log(maxSentiment);
     return COLORS[maxSentiment];
+}
+
+export function getSentimentColor(sentiment) {
+    if (!(sentiment in COLORS)) {
+        return '#999999';
+    }
+    return COLORS[sentiment];
 }

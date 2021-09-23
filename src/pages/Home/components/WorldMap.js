@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from 'react';
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import ReactTooltip from 'react-tooltip';
-import getCountryColor from 'utils/countryColor';
+import { getCountryColor } from 'utils/countryColor';
 
 const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
