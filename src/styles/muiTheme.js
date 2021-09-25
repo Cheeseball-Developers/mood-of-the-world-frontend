@@ -48,8 +48,28 @@ export const light = () => (createMuiTheme({
     },
     typography: {
         useNextVariants: true,
+        
         h1: {
-            fontSize: '72px'
+            fontFamily: 'MuseoModerno',
+            fontSize: '96px',
+            color: '#FFFFFF'
+        },
+        h2: {
+            fontSize: '64px'
+        },
+        h3: {
+            fontFamily: 'Pacifico',
+            fontSize: '16px',
+        },
+        body1: {
+
+        },
+        body2: {
+            fontFamily: 'Nunito',
+            fontSize: '12px'
+        },
+        subtitle2: {
+            fontSize: '9px',
         }
     }
     //common styles.

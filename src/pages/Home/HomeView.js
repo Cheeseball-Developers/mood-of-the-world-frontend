@@ -63,7 +63,8 @@ function HomeView({ handleThemeChange }) {
             <ReactTooltip getContent={function () {
                 return (
                     <div>
-                        <span>{countryName}</span>
+                        <Typography variant='h3'>{countryName}</Typography>
+                        <br />
                         {sentiments.length === 0 ?
                             <div>LOADING</div> :
                             (country in sentiments) ? <SentimentsTooltip sentiments={sentiments[country]} /> :
