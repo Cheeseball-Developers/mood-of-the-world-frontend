@@ -19,6 +19,7 @@ import './fonts/Nunito/Nunito-Regular.ttf';
 import './fonts/Nunito/Nunito-SemiBold.ttf';
 import './fonts/Nunito/Nunito-SemiBoldItalic.ttf';
 import './fonts/Pacifico/Pacifico-Regular.ttf';
+import './fonts/FugazOne/FugazOne-Regular.ttf';
 
 ReactDOM.render(
   <React.StrictMode>

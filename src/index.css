@@ -98,3 +98,8 @@
     font-family: "Pacifico";
     src: local("Pacifico"), url("./fonts/Pacifico/Pacifico-Regular.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "FugazOne";
+    src: local("FugazOne"), url("./fonts/FugazOne/FugazOne-Regular.ttf") format("truetype");
+}

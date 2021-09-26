@@ -1,9 +1,76 @@
 .title {
-    font-family: 'MuseoModerno';
+    font-family: 'FugazOne';
+    font-weight: 100;
     font-size: 96px;
     color: #FFFFFF;
+    margin: 0px;
 }
 
 .shadow {
-    text-shadow: 4px 4px 0px rgba(255, 0, 0, 1), 8px 8px 0px rgba(0, 255, 0, 1), 12px 12px 0px rgba(0, 0, 255, 1);
+    text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    animation-name: shadow-animation;
+    animation-duration: 3000ms;
+}
+
+@keyframes shadow-animation {
+    0% {
+        text-shadow: 6px 6px 0px #B563B400, 12px 12px 0px #53B88100, 18px 18px 0px #EE595100;
+    }
+    10% {
+        text-shadow: 6px 6px 0px #B563B400, 12px 12px 0px #53B88100, 18px 18px 0px #EE595100;
+    }
+    11% {
+        text-shadow: 6px 6px 0px #EE5951, 12px 12px 0px #B563B400, 18px 18px 0px #53B88100;
+    }
+    20% {
+        text-shadow: 6px 6px 0px #EE5951, 12px 12px 0px #B563B400, 18px 18px 0px #53B88100;
+    }
+    21% {
+        text-shadow: 6px 6px 0px #53B881, 12px 12px 0px #EE5951, 18px 18px 0px #B563B400;
+    }
+    30% {
+        text-shadow: 6px 6px 0px #53B881, 12px 12px 0px #EE5951, 18px 18px 0px #B563B400;
+    }
+    31% {
+        text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    }
+    40% {
+        text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    }
+    41% {
+        text-shadow: 6px 6px 0px #EE5951, 12px 12px 0px #B563B4, 18px 18px 0px #53B881;
+    }
+    50% {
+        text-shadow: 6px 6px 0px #EE5951, 12px 12px 0px #B563B4, 18px 18px 0px #53B881;
+    }
+    51% {
+        text-shadow: 6px 6px 0px #53B881, 12px 12px 0px #EE5951, 18px 18px 0px #B563B4;
+    }
+    60% {
+        text-shadow: 6px 6px 0px #53B881, 12px 12px 0px #EE5951, 18px 18px 0px #B563B4;
+    }
+    61% {
+        text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    }
+    70% {
+        text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    }
+    71% {
+        text-shadow: 6px 6px 0px #EE5951, 12px 12px 0px #B563B4, 18px 18px 0px #53B881;
+    }
+    80% {
+        text-shadow: 6px 6px 0px #EE5951, 12px 12px 0px #B563B4, 18px 18px 0px #53B881;
+    }
+    81% {
+        text-shadow: 6px 6px 0px #53B881, 12px 12px 0px #EE5951, 18px 18px 0px #B563B4;
+    }
+    90% {
+        text-shadow: 6px 6px 0px #53B881, 12px 12px 0px #EE5951, 18px 18px 0px #B563B4;
+    }
+    91% {
+        text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    }
+    100% {
+        text-shadow: 6px 6px 0px #B563B4, 12px 12px 0px #53B881, 18px 18px 0px #EE5951;
+    }
 }

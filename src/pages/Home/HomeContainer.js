@@ -5,11 +5,17 @@ import AnimatedTitle from 'components/AnimatedTitle';
 export const HomeContainer = ({ handleThemeChange }) => {
     const [showSplash, setShowSplash] = useState(true);
 
-    setTimeout(() => { setShowSplash(false) }, 2000);
+    setTimeout(() => { setShowSplash(false) }, 3000);
 
     return (
         <div>
-            {showSplash ? <AnimatedTitle /> : <HomeView title='The World is Feeling *sentiment*' handleThemeChange={handleThemeChange} />}
+            {showSplash ? <div style={{
+                position: 'absolute', left: '50%', top: '50%',
+                transform: 'translate(-50%, -50%)'
+            }}>
+                <AnimatedTitle />
+            </div> :
+                <HomeView title='The World is Feeling *sentiment*' handleThemeChange={handleThemeChange} />}
         </div>
     );
 }
