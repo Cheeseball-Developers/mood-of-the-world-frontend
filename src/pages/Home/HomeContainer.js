@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HomeView from 'pages/Home/HomeView.js';
-import AnimatedTitle from 'components/AnimatedTitle';
 
 export const HomeContainer = ({ handleThemeChange }) => {
     return (

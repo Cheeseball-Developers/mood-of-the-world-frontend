@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { ROOT, ABOUT } from 'navigation/CONSTANTS';
 import SentimentService from 'services/SentimentService';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import WorldMap from './components/WorldMap';
 import { useState } from 'react';
 import { ActionsContainer } from 'components';
