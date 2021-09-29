@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AwesomeButton } from 'react-awesome-button';
-import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 import './ActionsContainer.css'
 import RoundedButton from 'components/RoundedButton';
 
