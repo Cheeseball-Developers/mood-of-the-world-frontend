@@ -18,8 +18,29 @@ export const dark = () => (createTheme({
     typography: {
         useNextVariants: true,
         h1: {
+            fontFamily: 'Pacifico',
             fontSize: '72px',
-            color: '#555555'
+            color: '#Eed07e'
+        },
+        h2: {
+            fontSize: '72px'
+        },
+        h3: {
+            fontFamily: 'Nunito',
+            fontSize: '22px',
+            fontWeight: 600,
+            color: '#888888'
+        },
+        h4: {
+            fontFamily: 'Pacifico',
+            fontSize: '16px',
+        },
+        body2: {
+            fontFamily: 'Nunito',
+            fontSize: '12px'
+        },
+        subtitle2: {
+            fontSize: '9px',
         }
     }//,
     //common styles.
@@ -41,7 +62,6 @@ export const light = () => (createTheme({
     },
     typography: {
         useNextVariants: true,
-        
         h1: {
             fontFamily: 'Pacifico',
             fontSize: '72px',
@@ -59,9 +79,6 @@ export const light = () => (createTheme({
         h4: {
             fontFamily: 'Pacifico',
             fontSize: '16px',
-        },
-        body1: {
-
         },
         body2: {
             fontFamily: 'Nunito',
