@@ -18,7 +18,11 @@ export const SentimentsTooltip = ({ sentiments }) => {
                                 </span>
                                 <br />
                             </Typography>
-                        )
+                        );
+                    } else {
+                        return (
+                            <div></div>
+                        );
                     }
                 })
             }
