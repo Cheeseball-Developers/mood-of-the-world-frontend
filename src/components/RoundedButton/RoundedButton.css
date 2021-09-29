@@ -1,0 +1,13 @@
+.rounded-button {
+    border-radius: 50%;
+    background-color: #19a068;
+    color: #FFFFFF;
+    padding: 8px;
+    margin: 4px;
+    box-shadow: rgba(150, 149, 124, 0.4) 6px 6px 0px;
+}
+
+.rounded-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: rgba(150, 149, 124, 0.4) 4px 4px 0px;
+}

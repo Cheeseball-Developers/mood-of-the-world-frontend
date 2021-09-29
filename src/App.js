@@ -6,9 +6,13 @@ import { ThemeProvider } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import { RouterConfig } from 'navigation/RouterConfig';
 import { light, dark } from 'styles/muiTheme';
+import AnimatedTitle from 'components/AnimatedTitle';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
   const [darkState, setDarkState] = useState(false);
+
+  setTimeout(() => { setShowSplash(false) }, 3000);
 
   const handleThemeChange = () => {
     setDarkState(!darkState);
@@ -17,12 +21,20 @@ function App() {
 
 
   return (
-    <div style={{overflow: 'hidden', scrollbarWidth: 'none'}}>
+    <div style={{ overflow: 'hidden', scrollbarWidth: 'none' }}>
       <ThemeProvider theme={darkState ? dark() : light()}>
         <CssBaseline />
-        <BrowserRouter>
-          <RouterConfig handleThemeChange={handleThemeChange} />
-        </BrowserRouter>
+        {showSplash ? <div style={{
+          position: 'absolute', left: '50%', top: '50%',
+          transform: 'translate(-50%, -50%)'
+        }}>
+          <AnimatedTitle />
+        </div> :
+
+          <BrowserRouter>
+            <RouterConfig handleThemeChange={handleThemeChange} />
+          </BrowserRouter>
+        }
       </ThemeProvider>
     </div>
   );

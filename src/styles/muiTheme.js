@@ -50,14 +50,20 @@ export const light = () => (createMuiTheme({
         useNextVariants: true,
         
         h1: {
-            fontFamily: 'MuseoModerno',
-            fontSize: '96px',
-            color: '#FFFFFF'
+            fontFamily: 'Pacifico',
+            fontSize: '72px',
+            color: '#Eed07e'
         },
         h2: {
-            fontSize: '64px'
+            fontSize: '72px'
         },
         h3: {
+            fontFamily: 'Nunito',
+            fontSize: '22px',
+            fontWeight: 600,
+            color: '#888888'
+        },
+        h4: {
             fontFamily: 'Pacifico',
             fontSize: '16px',
         },

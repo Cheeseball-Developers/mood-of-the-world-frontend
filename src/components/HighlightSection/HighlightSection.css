@@ -1,5 +1,6 @@
 .rounded-with-shadow {
     border-radius: 20px;
-    background-color: #AAAAAA;
+    background-color: #FFFFFF;
     padding: 20px;
+    box-shadow: rgba(150, 149, 124, 0.3) 6px 6px 0px;
 }

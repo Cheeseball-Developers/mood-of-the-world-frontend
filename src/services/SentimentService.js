@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-function roundToTwo(num) {    
-    return +(Math.round(num + "e+2")  + "e-2");
+function roundToTwo(num) {
+    return +(Math.round(num + "e+2") + "e-2");
 }
 
 export default class SentimentService {
@@ -9,7 +9,7 @@ export default class SentimentService {
 
     getEventSource() {
         if (this.es == null) {
-            this.es = new EventSource('https://mood-of-the-world-twitter.herokuapp.com/streaming_update/');
+            this.es = new EventSource('https://moodoftheworld.azurewebsites.net/streaming_update/');
         }
         return this.es;
     }
@@ -20,11 +20,13 @@ export default class SentimentService {
 
     getSentiments = async () => {
         const response = await axios.get(
-            'https://mood-of-the-world-twitter.herokuapp.com/get_emotions/'
+            'https://moodoftheworld.azurewebsites.net/get_emotions/'
         );
         for (const country in response.data) {
             for (const sentiment in response.data[country]) {
-                response.data[country][sentiment] = roundToTwo(response.data[country][sentiment]*100);
+                if (sentiment !== 'lastUpdated') {
+                    response.data[country][sentiment] = roundToTwo(response.data[country][sentiment] * 100);
+                }
             }
         }
         return response.data;

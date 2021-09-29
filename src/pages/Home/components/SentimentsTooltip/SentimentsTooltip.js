@@ -8,20 +8,22 @@ export const SentimentsTooltip = ({ sentiments }) => {
         <div>
             {
                 Object.keys(sentiments).map(function (sentiment, i) {
-                    return (
-                        <Typography variant='body2'>
-                            <span class='dot' style={{ 'background-color': getSentimentColor(sentiment) }}></span>
-                            &nbsp;&nbsp;
-                            <span>
-                                {sentiment.charAt(0).toUpperCase() + sentiment.slice(1) + ': ' + sentiments[sentiment] + '%'}
-                            </span>
-                            <br />
-                        </Typography>
-                    )
+                    if (sentiment !== 'lastUpdated') {
+                        return (
+                            <Typography variant='body2'>
+                                <span class='dot' style={{ 'background-color': getSentimentColor(sentiment) }}></span>
+                                &nbsp;&nbsp;
+                                <span>
+                                    {sentiment.charAt(0).toUpperCase() + sentiment.slice(1) + ': ' + sentiments[sentiment] + '%'}
+                                </span>
+                                <br />
+                            </Typography>
+                        )
+                    }
                 })
             }
             <br />
-            <Typography variant='subtitle2'>Last Update at 12:00</Typography>
+            <Typography variant='subtitle2'>Last Update at {sentiments['lastUpdated']}</Typography>
         </div >
     );
 }
