@@ -26,7 +26,7 @@ export const dark = () => (createTheme({
     //   global
 }))
 
-export const light = () => (createMuiTheme({
+export const light = () => (createTheme({
     palette: {
         type: 'light',
         primary: {
