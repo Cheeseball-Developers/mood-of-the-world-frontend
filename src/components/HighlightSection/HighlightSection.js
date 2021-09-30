@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography } from '@material-ui/core';
+import { Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import './HighlightSection.css';
 
 export const HighlightSection = (props) => {
     return (
-        <div className={'rounded-with-shadow'}>
+        <div className={useTheme().palette.type==='dark' ? 'dark-rounded-with-shadow':  'rounded-with-shadow'}>
             <Typography variant='h3'>{props.title}</Typography>
             <br />
             <div>

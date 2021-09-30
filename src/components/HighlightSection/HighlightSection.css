@@ -4,3 +4,10 @@
     padding: 20px;
     box-shadow: rgba(150, 149, 124, 0.3) 6px 6px 0px;
 }
+
+.dark-rounded-with-shadow {
+    border-radius: 20px;
+    background-color: #252525;
+    padding: 20px;
+    box-shadow: rgba(150, 149, 124, 0.3) 6px 6px 0px;
+}
