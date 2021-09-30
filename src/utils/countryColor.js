@@ -22,8 +22,6 @@ export function getCountryColor(sentiments) {
             maxSentiment = sentiment;
         }
     }
-    console.log(sentiments);
-    console.log(maxSentiment);
     return COLORS[maxSentiment];
 }
 

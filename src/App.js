@@ -6,17 +6,19 @@ import { ThemeProvider } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import { RouterConfig } from 'navigation/RouterConfig';
 import { light, dark } from 'styles/muiTheme';
+import Cookies from 'universal-cookie';
 import AnimatedTitle from 'components/AnimatedTitle';
 
 function App() {
+  const cookies = new Cookies();
   const [showSplash, setShowSplash] = useState(true);
-  const [darkState, setDarkState] = useState(false);
+  const [darkState, setDarkState] = useState(cookies.get('darkState')==='false');
 
   setTimeout(() => { setShowSplash(false) }, 3000);
 
   const handleThemeChange = () => {
     setDarkState(!darkState);
-    console.log("theme=", darkState ? "dark" : "light");
+    cookies.set('darkState', darkState, {path: '/'});
   };
 
 
