@@ -11,6 +11,7 @@ import { ActionsContainer } from 'components';
 import InfoRounded from '@material-ui/icons/InfoRounded';
 import Brightness2Rounded from '@material-ui/icons/Brightness2Rounded';
 import SentimentsTooltip from './components/SentimentsTooltip';
+import { isBrowser } from 'react-device-detect';
 
 const sentimentService = new SentimentService();
 
@@ -60,7 +61,7 @@ function HomeView({ handleThemeChange }) {
             <ActionsContainer buttons={buttons} />
             {/* <Button variant="contained" color="primary" onClick={() => goTo(ABOUT)}>&#8505;</Button> */}
             <WorldMap sentiments={sentiments} setCountryName={setCountryName} setCountry={setCountry} />
-            <ReactTooltip getContent={function () {
+            {isBrowser ? <ReactTooltip getContent={function () {
                 return (
                     <div>
                         <Typography variant='h4'>{countryName}</Typography>
@@ -71,7 +72,7 @@ function HomeView({ handleThemeChange }) {
                                 <div>Data Unavailable</div>}
                     </div>
                 )
-            }} />
+            }} /> : <div></div>}
         </React.Fragment>
     );
 }
