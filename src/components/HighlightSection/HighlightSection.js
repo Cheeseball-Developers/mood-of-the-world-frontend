@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { Typography, useTheme } from '@material-ui/core';
 import './HighlightSection.css';
 
 export const HighlightSection = (props) => {
