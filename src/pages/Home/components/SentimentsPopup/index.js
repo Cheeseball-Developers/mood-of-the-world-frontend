@@ -1,0 +1,1 @@
+export { SentimentsPopup as default } from './SentimentsPopup';
