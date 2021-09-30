@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from 'react';
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import ReactTooltip from 'react-tooltip';
 import { getCountryColor } from 'utils/countryColor';
 
@@ -36,6 +36,7 @@ const WorldMap = ({ sentiments, setCountryName, setCountry }) => {
     return (
         <div>
             <ComposableMap height={height} width={width}>
+                <ZoomableGroup zoom={1}>
                 <Geographies geography={geoUrl}>
                     {({ geographies }) =>
                         geographies.map(geo => (
@@ -71,6 +72,7 @@ const WorldMap = ({ sentiments, setCountryName, setCountry }) => {
                         ))
                     }
                 </Geographies>
+                </ZoomableGroup>
             </ComposableMap>
         </div>
     );
