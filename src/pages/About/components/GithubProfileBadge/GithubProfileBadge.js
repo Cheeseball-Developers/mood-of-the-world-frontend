@@ -5,9 +5,9 @@ import { Avatar } from '@material-ui/core';
 
 export const GithubProfileBadge = (props) => {
     return (
-        <div align='center'>
-        <Avatar src={`https://avatars.githubusercontent.com/${props.username}`} />
-        {props.username}
+        <div align='center' onClick={() => window.open(`https://github.com/${props.username}`, "_blank")}>
+            <Avatar src={`https://avatars.githubusercontent.com/${props.username}`} />
+            {props.username}
         </div>
     );
 }
