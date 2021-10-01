@@ -42,7 +42,7 @@ export const AboutView = (props) => {
                     <li>optimism,</li>
                     <li>pessimism,</li>
                 </ul>
-                <img src={emotions} style={{ width: '100%' }} />
+                <img src={emotions} style={{ width: '100%' }} alt="Plutchik Emotions" />
                 <br />
                 Emotional investigation of Twitter data is a field that has been given much attention over the last decade and involves dissecting “tweets” (comments) and the content of these expressions.
                 We use NLP (Natural Language Processing) + Deep learning techniques to analyze sentiments based on 11 emotions.
