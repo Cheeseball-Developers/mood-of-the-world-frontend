@@ -10,7 +10,7 @@ export const SentimentsTooltip = ({ sentiments }) => {
                 Object.keys(sentiments).map(function (sentiment, i) {
                     if (sentiment !== 'lastUpdated') {
                         return (
-                            <Typography variant='body2'>
+                            <Typography variant='subtitle1'>
                                 <span class='dot' style={{ 'background-color': getSentimentColor(sentiment) }}></span>
                                 &nbsp;&nbsp;
                                 <span>

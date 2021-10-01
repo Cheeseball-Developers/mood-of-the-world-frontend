@@ -35,7 +35,17 @@ export const dark = () => (createTheme({
             fontFamily: 'Pacifico',
             fontSize: '16px',
         },
+        body1: {
+            fontFamily: 'Nunito',
+            fontSize: '18px',
+            color: '#AAAAAA',
+            fontWeight: 600,
+        },
         body2: {
+            fontFamily: 'Nunito',
+            fontSize: '16px'
+        },
+        subtitle1: {
             fontFamily: 'Nunito',
             fontSize: '12px'
         },
@@ -80,7 +90,17 @@ export const light = () => (createTheme({
             fontFamily: 'Pacifico',
             fontSize: '16px',
         },
+        body1: {
+            fontFamily: 'Nunito',
+            fontSize: '18px',
+            color: '#666666',
+            fontWeight: 600,
+        },
         body2: {
+            fontFamily: 'Nunito',
+            fontSize: '14px'
+        },
+        subtitle1: {
             fontFamily: 'Nunito',
             fontSize: '12px'
         },
