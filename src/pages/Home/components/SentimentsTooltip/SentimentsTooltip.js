@@ -3,7 +3,9 @@ import React from 'react';
 import { getSentimentColor } from 'utils/countryColor';
 import './SentimentsTooltip.css';
 
-export const SentimentsTooltip = ({ sentiments }) => {
+export const SentimentsTooltip = ({ countryData }) => {
+    let sentiments = countryData['sentiments'];
+    let lastUpdated = countryData['lastUpdated'];
     return (
         <div>
             {
@@ -27,7 +29,7 @@ export const SentimentsTooltip = ({ sentiments }) => {
                 })
             }
             <br />
-            <Typography variant='subtitle2'>Last Update at {sentiments['lastUpdated']}</Typography>
+            <Typography variant='subtitle2'>Last Update at {lastUpdated}</Typography>
         </div >
     );
 }

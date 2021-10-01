@@ -60,7 +60,7 @@ function HomeView({ handleThemeChange }) {
             {/* <Typography variant='h2'>{props.title}</Typography> */}
             <ActionsContainer buttons={buttons} />
             {/* <Button variant="contained" color="primary" onClick={() => goTo(ABOUT)}>&#8505;</Button> */}
-            <WorldMap sentiments={sentiments} setCountryName={setCountryName} setCountry={setCountry} />
+            <WorldMap countriesData={sentiments} setCountryName={setCountryName} setCountry={setCountry} />
             {isBrowser ? <ReactTooltip getContent={function () {
                 return (
                     <div>
@@ -68,7 +68,7 @@ function HomeView({ handleThemeChange }) {
                         <br />
                         {sentiments.length === 0 ?
                             <div>LOADING</div> :
-                            (country in sentiments) ? <SentimentsTooltip sentiments={sentiments[country]} /> :
+                            (country in sentiments) ? <SentimentsTooltip countryData={sentiments[country]} /> :
                                 <div>Data Unavailable</div>}
                     </div>
                 )

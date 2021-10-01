@@ -18,7 +18,7 @@ const rounded = num => {
     }
 };
 
-const WorldMap = ({ sentiments, setCountryName, setCountry }) => {
+const WorldMap = ({ countriesData, setCountryName, setCountry }) => {
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -49,7 +49,7 @@ const WorldMap = ({ sentiments, setCountryName, setCountry }) => {
                                     geography={geo}
                                     onClick={() => {
                                         if (isMobile) {
-                                            if (geo.properties['ISO_A2'] in sentiments) {
+                                            if (geo.properties['ISO_A2'] in countriesData) {
                                                 setSelectedCountryName(geo.properties['NAME']);
                                                 setSelectedCountry(geo.properties['ISO_A2']); console.log(selectedCountry);
                                             }
@@ -67,7 +67,7 @@ const WorldMap = ({ sentiments, setCountryName, setCountry }) => {
                                     }}
                                     style={{
                                         default: {
-                                            fill: geo.properties['ISO_A2'] in sentiments ? getCountryColor(sentiments[geo.properties['ISO_A2']]) : '#ADAA90',
+                                            fill: geo.properties['ISO_A2'] in countriesData ? getCountryColor(countriesData[geo.properties['ISO_A2']]['sentiments']) : '#ADAA90',
                                             outline: "none"
                                         },
                                         hover: {
@@ -85,7 +85,7 @@ const WorldMap = ({ sentiments, setCountryName, setCountry }) => {
                     </Geographies>
                 </ZoomableGroup>
             </ComposableMap>
-            {selectedCountry ? <SentimentsPopup countryName={selectedCountryName} sentiments={sentiments[selectedCountry]} onExit={() => { setSelectedCountry(null) }} /> : <div></div>}
+            {selectedCountry ? <SentimentsPopup countryName={selectedCountryName} countryData={countriesData[selectedCountry]} onExit={() => { setSelectedCountry(null) }} /> : <div></div>}
         </div>
     );
 }
