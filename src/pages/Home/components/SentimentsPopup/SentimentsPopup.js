@@ -24,7 +24,7 @@ export const SentimentsPopup = ({ countryName, countryData, onExit }) => {
                     })
                 }
                 <br />
-                <Typography variant='subtitle2'>Last Update at {countryData['sentiments']['lastUpdated']}</Typography>
+                <Typography variant='subtitle2'>Last Update at {countryData['lastUpdated']}</Typography>
             </div>
         </div>
     );
