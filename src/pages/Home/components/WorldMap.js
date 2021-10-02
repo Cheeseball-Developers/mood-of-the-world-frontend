@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from 'react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
 import ReactTooltip from 'react-tooltip';
-import { getCountryColor } from 'utils/countryColor';
+import { getSentimentColor, getSentimentHighlightColor } from 'utils/countryColor';
 import { isMobile } from 'react-device-detect';
 import SentimentsPopup from './SentimentsPopup';
 
@@ -67,15 +67,15 @@ const WorldMap = ({ countriesData, setCountryName, setCountry }) => {
                                     }}
                                     style={{
                                         default: {
-                                            fill: geo.properties['ISO_A2'] in countriesData ? getCountryColor(countriesData[geo.properties['ISO_A2']]['sentiments']) : '#ADAA90',
+                                            fill: geo.properties['ISO_A2'] in countriesData ? getSentimentColor(Object.keys(countriesData[geo.properties['ISO_A2']]['sentiments'])[0]) : '#ADAA90',
                                             outline: "none"
                                         },
                                         hover: {
-                                            fill: "#F53",
+                                            fill: geo.properties['ISO_A2'] in countriesData ? getSentimentHighlightColor(Object.keys(countriesData[geo.properties['ISO_A2']]['sentiments'])[0]) : '#ADAA90',
                                             outline: "none"
                                         },
                                         pressed: {
-                                            fill: "#E42",
+                                            fill: geo.properties['ISO_A2'] in countriesData ? getSentimentHighlightColor(Object.keys(countriesData[geo.properties['ISO_A2']]['sentiments'])[0]) : '#ADAA90',
                                             outline: "none"
                                         }
                                     }}
