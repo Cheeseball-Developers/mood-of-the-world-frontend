@@ -18,7 +18,7 @@ export default class SentimentService {
 
     getEventSource() {
         if (this.es == null) {
-            this.es = new EventSource('https://moodoftheworld.azurewebsites.net/streaming_update/');
+            this.es = new EventSource('https://mood-of-the-world.azurewebsites.net/streaming_update/');
         }
         return this.es;
     }
@@ -29,7 +29,7 @@ export default class SentimentService {
 
     getSentiments = async () => {
         const response = await axios.get(
-            'https://moodoftheworld.azurewebsites.net/get_emotions/'
+            'https://mood-of-the-world.azurewebsites.net/get_emotions/'
         );
         let cleanResponse = {};
         for (const country in response.data) {
