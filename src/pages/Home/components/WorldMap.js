@@ -6,7 +6,7 @@ import { isMobile } from 'react-device-detect';
 import SentimentsPopup from './SentimentsPopup';
 
 const geoUrl =
-    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+    "https://raw.githubusercontent.com/Cheeseball-Developers/mood-of-the-world-frontend/master/src/assets/map/world-110m.json";
 
 const rounded = num => {
     if (num > 1000000000) {
